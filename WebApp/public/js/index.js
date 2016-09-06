@@ -12,11 +12,17 @@
       };
     });
 
-angular.module('cardDemo2', ['ngMaterial'])
+    angular.module('toolbarDemo1', ['ngMaterial'])
 
-    .controller('AppCtrl', function($scope) {
-        $scope.imagePath = 'img/washedout.png';
-    });
+        .controller('AppCtrl', function($scope) {
+
+        });
+
+    angular.module('cardDemo2', ['ngMaterial'])
+
+        .controller('AppCtrl', function($scope) {
+            $scope.imagePath = 'img/washedout.png';
+        });
 
 })();
 

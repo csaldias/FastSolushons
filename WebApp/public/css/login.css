@@ -153,7 +153,6 @@ input:focus ~ .highlight {
   letter-spacing: 1px;
   background: transparent;
   border: 0;
-  border-bottom: 2px solid #3160B6;
   cursor: pointer;
   -webkit-transition:all 0.15s ease;
   transition: all 0.15s ease;
@@ -165,6 +164,7 @@ input:focus ~ .highlight {
 
 .buttonBlue {
   background: #4a89dc;
+	border-bottom: 2px solid #3160B6;
   text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
 }
 
@@ -174,6 +174,7 @@ input:focus ~ .highlight {
 
 .buttonGreen {
 	background: #65dc60;
+	border-bottom: 2px solid #71b677;
 	text-shadow: 1px 1px 0 rgba(44, 204, 67, .5);
 }
 

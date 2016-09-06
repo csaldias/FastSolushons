@@ -1,6 +1,8 @@
 .fabToolbardemoBasicUsage md-fab-toolbar.md-right md-fab-trigger.align-with-text {
   left: 7px; }
 
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; }
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved. 
