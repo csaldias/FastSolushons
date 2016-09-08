@@ -16,6 +16,10 @@ app.get('/', function (req, res) {
 app.get('/login', function (req, res) {
     res.sendfile(__dirname + '/Views/login.html');
 });
+
+app.get('/register', function (req, res) {
+    res.sendfile(__dirname + '/Views/register.html');
+});
 app.use(express.static('public'));
 
 //Escuchar

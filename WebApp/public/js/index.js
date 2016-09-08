@@ -4,25 +4,13 @@
   angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
     .controller('AppCtrl', function($scope) {
       $scope.isOpen = false;
-
+        $scope.imagePath = 'img/usmCC.jpg';
       $scope.demo = {
         isOpen: false,
         count: 0,
         selectedDirection: 'left'
       };
     });
-
-    angular.module('toolbarDemo1', ['ngMaterial'])
-
-        .controller('AppCtrl', function($scope) {
-
-        });
-
-    angular.module('cardDemo2', ['ngMaterial'])
-
-        .controller('AppCtrl', function($scope) {
-            $scope.imagePath = 'img/washedout.png';
-        });
 
 })();
 
