@@ -20,6 +20,15 @@ app.get('/login', function (req, res) {
 app.get('/register', function (req, res) {
     res.sendfile(__dirname + '/Views/register.html');
 });
+
+app.get('/encuesta_paso1', function (req, res) {
+    res.sendfile(__dirname + '/Views/encuesta_paso1.html');
+});
+
+app.get('/encuesta_paso2', function (req, res) {
+    res.sendfile(__dirname + '/Views/encuesta_paso2.html');
+});
+
 app.use(express.static('public'));
 
 //Escuchar

@@ -1,0 +1,1 @@
+angular.module('basicInputDemoUsage',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
