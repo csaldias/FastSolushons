@@ -1,0 +1,48 @@
+estudiante debe registrarse
+estudiante debe iniciar sesion
+estudiante debe responder encuesta al registrarse
+estudiante puede visualizar contenido
+estudiante puede valorar contenido
+estudiante puede valorar presentacion de contenidos
+profesor puede modificar contenido
+profesor puede clasificar contenido
+profesor puede subir contenido
+profesor puede borrar contenido
+profesor puede ver contenido
+estudiante puede editar perfil estudiante
+profesor puede editar perfil estudiante
+profesor puede editar perfil profesor
+administrador puede registrar estudiante
+administrador puede registrar profesor
+administrador puede modificar estudiante
+administrador puede modificar profesor
+administrador puede eliminar profesor
+administrador puede eliminar estudiante
+administrador puede modificar orden contenido
+profesor puede modificar orden contenido
+profesor puede ver feedback contenido
+administrador puede ver feedback contenido
+
+
+Casos de uso:
+
+registrar estudiante: estudiante, profesor, administrador
+registrar profesor: administrador
+iniciar sesion: estudiante, profesor, administrador
+responder encuesta: estudiante
+visualizar contenido: estudiante, profesor, administrador
+modificar contenido: profesor, administrador
+subir contenido: profesor, administrador
+eliminar contenido: profesor, administrador
+clasificar contenido: profesor, administrador
+valorar contenido: estudiante
+valorar presentacion: estudiante
+editar perfil estudiante: estudiante, profesor, administrador
+editar perfil profesor: profesor, administrador
+editar perfil administrador: administrador
+eliminar estudiante: profesor, administrador
+eliminar profesor: administrador
+ordenar contenido: profesor, administrador
+ver feedback contenido: profesor, administrador
+ver feedback orden: profesor, administrador
+
