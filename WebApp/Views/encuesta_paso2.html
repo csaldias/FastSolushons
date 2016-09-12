@@ -526,8 +526,10 @@
                     </div>
                 </section>
                 <md-divider ng-if="!$last"></md-divider>
-                <md-button class="md-raised md-primary">Enviar Encuesta</md-button>
+                <md-button class="md-raised md-primary" ng-click="calcCategoria(p1.a,p2.a,p3.a,p4.a,p5.a,p6.a,p7.a,p8.a,p9.a,p10.a,p11.a,p12.a)" >Enviar Encuesta</md-button>
+                <md-button class="md-raised md-primary" ng-click="categoria()" >boton2</md-button>
             </div>
+            <pre>Resultado = {{Result | json}}</pre>
 
         </md-card-content>
     </md-card>
