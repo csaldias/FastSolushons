@@ -45,20 +45,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="encuesta_paso2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="encuesta_paso2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/encuesta_paso2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="531" column="32" selection-start-line="531" selection-start-column="32" selection-end-line="531" selection-end-column="32" />
+            <state relative-caret-position="233">
+              <caret line="528" column="173" selection-start-line="528" selection-start-column="173" selection-end-line="528" selection-end-column="173" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="351">
               <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
               <folding />
             </state>
@@ -342,12 +342,12 @@
       <workItem from="1473460059300" duration="1878000" />
       <workItem from="1473558476041" duration="63000" />
       <workItem from="1473631106967" duration="177000" />
-      <workItem from="1473643944619" duration="4897000" />
+      <workItem from="1473643944619" duration="4949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17492000" />
+    <option name="totallyTimeSpent" value="17544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -741,18 +741,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/encuesta_paso2.html">
+    <entry file="file://$PROJECT_DIR$/public/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="531" column="32" selection-start-line="531" selection-start-column="32" selection-end-line="531" selection-end-column="32" />
+        <state relative-caret-position="351">
+          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/register.js">
+    <entry file="file://$PROJECT_DIR$/Views/encuesta_paso2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+        <state relative-caret-position="233">
+          <caret line="528" column="173" selection-start-line="528" selection-start-column="173" selection-end-line="528" selection-end-column="173" />
           <folding />
         </state>
       </provider>
