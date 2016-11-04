@@ -9,6 +9,8 @@ var express = require('express');
 var app = express();
 
 //Ruteo
+
+//Hay que hacer que tengas que logearte para ver el main
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/Views/index.html');
 });
