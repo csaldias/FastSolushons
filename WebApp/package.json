@@ -3,8 +3,10 @@
   "description": "Servidor web de prueba",
   "version": "1.0.0",
   "dependencies": {
-    "express": "3.x",
-    "mysql": "",
-    "express-myconnection": ""
+    "ejs": "^1.0.0",
+    "express": "3.5.1",
+    "express-myconnection": "",
+    "jade": "*",
+    "mysql": ""
   }
 }
