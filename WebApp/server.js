@@ -12,15 +12,15 @@ var app = express();
 
 //Hay que hacer que tengas que logearte para ver el main
 app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/Views/index.html');
+    res.sendfile(__dirname + '/Views/index.ejs');
 });
 
 app.get('/login', function (req, res) {
-    res.sendfile(__dirname + '/Views/login.html');
+    res.sendfile(__dirname + '/Views/login.ejs');
 });
 
 app.get('/register', function (req, res) {
-    res.sendfile(__dirname + '/Views/register.html');
+    res.sendfile(__dirname + '/Views/register.ejs');
 });
 
 app.get('/encuesta_paso1', function (req, res) {
