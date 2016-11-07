@@ -53,7 +53,11 @@ app.use(
 app.get('/', routes.index);
 app.get('/login', users.login);
 app.get('/register', users.register);
-app.post('/login_process', users.process_login);
+app.post('/login_process', users.processLogin);
+app.get('/encuesta_paso1', encuesta.renderPaso1);
+app.get('/encuesta_paso2', encuesta.renderPaso2);
+app.get('/encuesta_process', encuesta.processEncuesta);
+
 //app.get('/usuarios', users.list);
 //app.get('/usuarios/add', users.add);
 //app.post('/usuarios/add', users.save);

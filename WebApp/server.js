@@ -24,11 +24,11 @@ app.get('/register', function (req, res) {
 });
 
 app.get('/encuesta_paso1', function (req, res) {
-    res.sendfile(__dirname + '/Views/encuesta_paso1.html');
+    res.sendfile(__dirname + '/Views/encuesta_paso1.ejs');
 });
 
 app.get('/encuesta_paso2', function (req, res) {
-    res.sendfile(__dirname + '/Views/encuesta_paso2.html');
+    res.sendfile(__dirname + '/Views/encuesta_paso2.ejs');
 });
 
 app.use(express.static('public'));

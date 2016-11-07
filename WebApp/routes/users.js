@@ -1,3 +1,4 @@
+
 exports.list = function(req, res){
 
     req.getConnection(function(err,connection){
@@ -27,6 +28,10 @@ exports.register = function(req, res){
 };
 
 exports.login = function(req, res){
+    res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
+};
+
+exports.processLogin = function(req, res){
     res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
 };
 
