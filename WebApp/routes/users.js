@@ -14,13 +14,15 @@ exports.list = function(req, res){
 
         });
 
-        //console.log(query.sql);
+        console.log(query.sql);
     });
 
 };
 
-exports.add = function(req, res){
-    res.render('add_cuser',{page_title:"Add Customers - Node.js"});
+exports.processRegister = function(req, res){
+    var util = require('util');
+    res.set('Content-Type', 'text/plain');
+    res.send(`Received: ${util.inspect(req.body.user, false, null)}`);
 };
 
 exports.register = function(req, res){
@@ -32,7 +34,26 @@ exports.login = function(req, res){
 };
 
 exports.processLogin = function(req, res){
-    res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
+    var util = require('util');
+    var post = req.body;
+    console.log(req.session);
+    //Obtener credenciales del usuario
+    var db = require('./../db');
+    var query = db.query('SELECT * FROM estudiante WHERE usuario = ?',[post.user.name],function(err,rows)
+    {
+
+        if(err)
+            console.log("Error Selecting : %s ",err );
+
+        console.log(util.inspect(rows, false, null));
+        if (rows[0].Contraseña == post.user.password) {
+            req.session.user = post.user.name;
+            res.redirect('/cursos');
+        } else {
+            res.set('Content-Type', 'text/plain');
+            res.send('usuario o contraseña incorrectos.');
+        }
+    });
 };
 
 exports.edit = function(req, res){
@@ -52,11 +73,11 @@ exports.edit = function(req, res){
 
         });
 
-        //console.log(query.sql);
+        console.log(query.sql);
     });
 };
 
-/*Save the customer*/
+/*Save the userr*/
 exports.save = function(req,res){
 
     var input = JSON.parse(JSON.stringify(req.body));

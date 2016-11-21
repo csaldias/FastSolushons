@@ -7,6 +7,9 @@
     "express": "3.5.1",
     "express-myconnection": "",
     "jade": "*",
-    "mysql": ""
+    "mysql": "",
+    "body-parser": "",
+    "util": "",
+    "client-sessions": ""
   }
 }
