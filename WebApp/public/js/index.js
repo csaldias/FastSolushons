@@ -3,8 +3,24 @@
 
   angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
     .controller('AppCtrl', function($scope) {
+        var originatorEv;
+
+        this.openMenu = function($mdOpenMenu, ev) {
+            originatorEv = ev;
+            $mdOpenMenu(ev);
+        };
+
+        this.goLogin = function() {
+            $location.url('/');
+        };
+
       $scope.isOpen = false;
-        $scope.imagePath = 'img/usmCC.jpg';
+        $scope.tarjeta1 = 'img/lineas_campo.gif';
+        $scope.tarjeta2 = 'img/gauss.gif';
+        $scope.tarjeta3 = 'img/potencial.png';
+        $scope.tarjeta4 = 'img/capacitor1.gif';
+        $scope.tarjeta5 = 'img/resistencia.jpg';
+        $scope.anuncio = 'img/usmCC.jpg';
       $scope.demo = {
         isOpen: false,
         count: 0,

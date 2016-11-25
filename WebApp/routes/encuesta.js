@@ -8,5 +8,7 @@ exports.renderPaso2 = function(req, res){
 };
 
 exports.processEncuesta = function(req, res){
-    res.render('register',{page_title:"Registrar - Plataforma de Aprendizaje"});
+    var util = require('util');
+    res.set('Content-Type', 'text/plain');
+    res.send(`Received: ${util.inspect(req.body, false, null)}`);
 };

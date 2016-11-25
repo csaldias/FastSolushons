@@ -10,6 +10,8 @@
     "mysql": "",
     "body-parser": "",
     "util": "",
-    "client-sessions": ""
+    "client-sessions": "",
+    "morgan": "",
+    "method-override": ""
   }
 }

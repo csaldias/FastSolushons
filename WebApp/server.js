@@ -1,21 +1,17 @@
-/**
- * Module dependencies.
- */
+//App Setup =========================================================================
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var routes = require('./routes');
-var http = require('http');
-var path = require('path');
+var express        = require('express');
+var app            = express();                             // create our app w/ express
+var bodyParser     = require('body-parser');                // pull information from HTML POST (express4)
+var morgan         = require('morgan');                     // log requests to the console (express4)
+var methodOverride = require('method-override');            // simulate DELETE and PUT (express4)
 
-//Cargamos los modelos y controladores
-var users = require('./routes/users');
-var encuesta = require('./routes/encuesta');
-var index = require('./routes/index');
-var app = express();
+// Configuration ====================================================================
+var users     = require('./routes/users');                  //Rutas de usuario
+var encuesta  = require('./routes/encuesta');               //Rutas de encuesta
+var contenido = require('./routes/contenido');              //Rutas de contenido
 
-//Seteamos las cookies para mantener las sesiones
-var session = require('client-sessions');
+var session   = require('client-sessions');                 //Cookies para sesiones
 app.use(session({
     cookieName: 'session',
     secret: 'hegqN678tC',
@@ -23,33 +19,21 @@ app.use(session({
     activeDuration: 5 * 60 * 1000,
 }));
 
-//Cargamos la conexión con la BD
-var db = require('./db');
+var db   = require('./db');                                 //Conexion a BD
+var path = require('path');
 
 //Seteamos el entorno
 app.set('port', process.env.PORT || 9000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-//app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.use(morgan('dev'));                                         // log every request to the console
+app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
+app.use(bodyParser.json());                                     // parse application/json
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
+app.use(methodOverride());
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-/** bodyParser.urlencoded(options)
- * Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
- * and exposes the resulting object (containing the keys and values) on req.body
- */
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-/**bodyParser.json(options)
- * Parses the text as JSON and exposes the resulting object on req.body.
- */
-app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 
 // Devel, para poder ver los errores en el navegador
 if ('development' == app.get('env')) {
@@ -59,24 +43,16 @@ if ('development' == app.get('env')) {
 //Rutas de las URL's de la Plataforma
 
 app.get('/', users.login);
-app.get('/cursos', index.index);
+app.get('/cursos', contenido.index);
 app.get('/register', users.register);
 app.post('/login_process', users.processLogin);
-app.post('/register_process', users.processRegister);
+app.post('/register_process', users.addUser);
 app.get('/encuesta_paso1', encuesta.renderPaso1);
 app.get('/encuesta_paso2', encuesta.renderPaso2);
-app.get('/encuesta_process', encuesta.processEncuesta);
-
-//app.get('/usuarios', users.list);
-//app.get('/usuarios/add', users.add);
-//app.post('/usuarios/add', users.save);
-//app.get('/usuarios/delete/:id', users.delete_customer);
-//app.get('/usuarios/edit/:id', users.edit);
-//app.post('/usuarios/edit/:id', users.save_edit);
-
+app.post('/encuesta_process', encuesta.processEncuesta);
 
 app.use(app.router);
 
-http.createServer(app).listen(app.get('port'), function(){
-    console.log('Portal iniciado en http://localhost:' + app.get('port') + '/');
-});
+// listen (start app with node server.js) ======================================
+app.listen(app.get('port'));
+console.log('Portal iniciado en http://localhost:' + app.get('port') + '/');
