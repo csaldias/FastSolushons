@@ -45,11 +45,11 @@ if ('development' == app.get('env')) {
 app.get('/', users.login);
 app.get('/cursos', contenido.index);
 app.get('/register', users.register);
-app.post('/login_process', users.processLogin);
-app.post('/register_process', users.addUser);
-app.get('/encuesta_paso1', encuesta.renderPaso1);
-app.get('/encuesta_paso2', encuesta.renderPaso2);
-app.post('/encuesta_process', encuesta.processEncuesta);
+app.post('/login/process', users.login);
+app.post('/register/process', users.add);
+app.get('/encuesta/paso1', encuesta.renderPaso1);
+app.get('/encuesta/paso2', encuesta.renderPaso2);
+app.post('/encuesta/process', encuesta.processEncuesta);
 
 app.use(app.router);
 

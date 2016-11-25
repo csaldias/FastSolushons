@@ -1,4 +1,6 @@
+//Manejo del Controlador
 
+//Listar usuarios según tipo
 exports.list = function(req, res){
     req.getConnection(function(err,connection){
         var query = connection.query('SELECT * FROM users',function(err,rows)
@@ -11,30 +13,39 @@ exports.list = function(req, res){
     });
 };
 
-exports.addUser = function(req, res){
+exports.add = function(req, res){
     var util = require('util');
+    var db = require('./../db');
+    var post = req.body;
     console.log(`Received: ${util.inspect(req.body, false, null)}`);
-};
 
-exports.register = function(req, res){
-    res.render('register',{page_title:"Registrar - Plataforma de Aprendizaje"});
+    var data = {
+        Nombre      : post.nombre+" "+post.apellido,
+        Contraseña  : post.password,
+        Correo      : post.email,
+        Carrera     : post.carrera,
+        Rol         : post.rol,
+        usuario     : post.usuario
+    };
+    var query = db.query("INSERT INTO estudiante set ? ",data, function(err, rows)
+    {
+        if (err)
+            console.log("Error al insertar: %s ",err );
+        //res.redirect('/usuarios');
+    });
 };
 
 exports.login = function(req, res){
-    res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
-};
-
-exports.processLogin = function(req, res){
     var util = require('util');
     var post = req.body;
     console.log(req.session);
+    console.log(post);
     //Obtener credenciales del usuario
     var db = require('./../db');
     var query = db.query('SELECT * FROM estudiante WHERE usuario = ?',[post.user.name],function(err,rows)
     {
         if(err)
-            console.log("Error Selecting : %s ",err );
-        console.log(util.inspect(rows, false, null));
+            console.log("Error: %s ",err);
         if (rows[0].Contraseña == post.user.password) {
             req.session.user = post.user.name;
             res.redirect('/cursos');
@@ -97,7 +108,7 @@ exports.save_edit = function(req,res){
     });
 };
 
-exports.delete_customer = function(req,res){
+exports.delete = function(req,res){
     var id = req.params.id;
     req.getConnection(function (err, connection) {
         connection.query("DELETE FROM users WHERE id = ? ",[id], function(err, rows)
@@ -107,4 +118,13 @@ exports.delete_customer = function(req,res){
             res.redirect('/usuarios');
         });
     });
+};
+
+//Renderizado de Vistas
+exports.register = function(req, res){
+    res.render('register',{page_title:"Registrar - Plataforma de Aprendizaje"});
+};
+
+exports.login = function(req, res){
+    res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
 };

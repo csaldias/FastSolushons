@@ -19,7 +19,7 @@ angular
         });
 
         $scope.registrarUsuario = function () {
-            $http.post('/register_process', $scope.user)
+            $http.post('/register/process', $scope.user)
                 .error(function (data) {
                     console.log("Error: " + data);
                 });
