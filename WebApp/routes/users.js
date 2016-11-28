@@ -13,6 +13,18 @@ exports.list = function(req, res){
     });
 };
 
+exports.getDetails = function (req, res) {
+    var db = require('./../db');
+    var query = db.query('SELECT * FROM estudiante WHERE usuario = ?',[req.session.user],function(err,rows)
+    {
+        if(err)
+            console.log("Error: %s ",err);
+        res.writeHead(200, {"Content-Type": "application/json"});
+        var json = JSON.stringify(rows[0]);
+        res.end(json);
+    });
+}
+
 exports.add = function(req, res){
     var util = require('util');
     var db = require('./../db');
@@ -64,7 +76,7 @@ exports.logout = function(req, res) {
 exports.edit = function(req, res){
     var id = req.params.id;
     req.getConnection(function(err,connection){
-        var query = connection.query('SELECT * FROM users WHERE id = ?',[id],function(err,rows)
+        var query = connection.query('SELECT * FROM estudiante WHERE id = ?',[id],function(err,rows)
         {
             if(err)
                 console.log("Error Selecting : %s ",err );
@@ -133,3 +145,7 @@ exports.register = function(req, res){
 exports.renderLogin = function(req, res){
     res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
 };
+
+exports.renderModPerfil = function (req, res) {
+    res.render('mod_perfil',{usuario: req.session.user});
+}

@@ -46,6 +46,8 @@ app.get('/', contenido.loadContenido);
 app.get('/login', users.renderLogin);
 app.get('/logout', users.logout);
 app.get('/register', users.register);
+app.get('/perfil', users.renderModPerfil);
+app.post('/user/details', users.getDetails);
 app.post('/login/process', users.login);
 app.post('/register/process', users.add);
 app.get('/encuesta/paso1', encuesta.renderPaso1);

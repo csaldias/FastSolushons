@@ -5,7 +5,7 @@ angular
         };
 
         //Debug: Datos de prueba para encuesta
-        $scope.pregunta = {
+        /*$scope.pregunta = {
             "p1":{
                 "a":"4",
                 "c":"1",
@@ -65,7 +65,7 @@ angular
                 "b":"4",
                 "a":"1",
                 "c":"2",
-                "d":"3"}};
+                "d":"3"}};*/
 
         $scope.categoria = 0;
 
