@@ -71,10 +71,22 @@ angular
 
         $scope.obtenerCat = function () {
             //La forma mas obvia y menos elegante para calcular la categoria del usuario xd
-            sumA = parseInt($scope.pregunta.p1.a)+parseInt($scope.pregunta.p2.a)+parseInt($scope.pregunta.p3.a)+parseInt($scope.pregunta.p4.a)+parseInt($scope.pregunta.p5.a)+parseInt($scope.pregunta.p6.a)+parseInt($scope.pregunta.p7.a)+parseInt($scope.pregunta.p8.a)+parseInt($scope.pregunta.p9.a)+parseInt($scope.pregunta.p10.a)+parseInt($scope.pregunta.p11.a)+parseInt($scope.pregunta.p12.a);
-            sumB = parseInt($scope.pregunta.p1.b)+parseInt($scope.pregunta.p2.b)+parseInt($scope.pregunta.p3.b)+parseInt($scope.pregunta.p4.b)+parseInt($scope.pregunta.p5.b)+parseInt($scope.pregunta.p6.b)+parseInt($scope.pregunta.p7.b)+parseInt($scope.pregunta.p8.b)+parseInt($scope.pregunta.p9.b)+parseInt($scope.pregunta.p10.b)+parseInt($scope.pregunta.p11.b)+parseInt($scope.pregunta.p12.b);
-            sumC = parseInt($scope.pregunta.p1.c)+parseInt($scope.pregunta.p2.c)+parseInt($scope.pregunta.p3.c)+parseInt($scope.pregunta.p4.c)+parseInt($scope.pregunta.p5.c)+parseInt($scope.pregunta.p6.c)+parseInt($scope.pregunta.p7.c)+parseInt($scope.pregunta.p8.c)+parseInt($scope.pregunta.p9.c)+parseInt($scope.pregunta.p10.c)+parseInt($scope.pregunta.p11.c)+parseInt($scope.pregunta.p12.c);
-            sumD = parseInt($scope.pregunta.p1.d)+parseInt($scope.pregunta.p2.d)+parseInt($scope.pregunta.p3.d)+parseInt($scope.pregunta.p4.d)+parseInt($scope.pregunta.p5.d)+parseInt($scope.pregunta.p6.d)+parseInt($scope.pregunta.p7.d)+parseInt($scope.pregunta.p8.d)+parseInt($scope.pregunta.p9.d)+parseInt($scope.pregunta.p10.d)+parseInt($scope.pregunta.p11.d)+parseInt($scope.pregunta.p12.d);
+            sumA = parseInt($scope.pregunta.p1.a)+parseInt($scope.pregunta.p2.a)+parseInt($scope.pregunta.p3.a)+
+                   parseInt($scope.pregunta.p4.a)+parseInt($scope.pregunta.p5.a)+parseInt($scope.pregunta.p6.a)+
+                   parseInt($scope.pregunta.p7.a)+parseInt($scope.pregunta.p8.a)+parseInt($scope.pregunta.p9.a)+
+                   parseInt($scope.pregunta.p10.a)+parseInt($scope.pregunta.p11.a)+parseInt($scope.pregunta.p12.a);
+            sumB = parseInt($scope.pregunta.p1.b)+parseInt($scope.pregunta.p2.b)+parseInt($scope.pregunta.p3.b)+
+                   parseInt($scope.pregunta.p4.b)+parseInt($scope.pregunta.p5.b)+parseInt($scope.pregunta.p6.b)+
+                   parseInt($scope.pregunta.p7.b)+parseInt($scope.pregunta.p8.b)+parseInt($scope.pregunta.p9.b)+
+                   parseInt($scope.pregunta.p10.b)+parseInt($scope.pregunta.p11.b)+parseInt($scope.pregunta.p12.b);
+            sumC = parseInt($scope.pregunta.p1.c)+parseInt($scope.pregunta.p2.c)+parseInt($scope.pregunta.p3.c)+
+                   parseInt($scope.pregunta.p4.c)+parseInt($scope.pregunta.p5.c)+parseInt($scope.pregunta.p6.c)+
+                   parseInt($scope.pregunta.p7.c)+parseInt($scope.pregunta.p8.c)+parseInt($scope.pregunta.p9.c)+
+                   parseInt($scope.pregunta.p10.c)+parseInt($scope.pregunta.p11.c)+parseInt($scope.pregunta.p12.c);
+            sumD = parseInt($scope.pregunta.p1.d)+parseInt($scope.pregunta.p2.d)+parseInt($scope.pregunta.p3.d)+
+                   parseInt($scope.pregunta.p4.d)+parseInt($scope.pregunta.p5.d)+parseInt($scope.pregunta.p6.d)+
+                   parseInt($scope.pregunta.p7.d)+parseInt($scope.pregunta.p8.d)+parseInt($scope.pregunta.p9.d)+
+                   parseInt($scope.pregunta.p10.d)+parseInt($scope.pregunta.p11.d)+parseInt($scope.pregunta.p12.d);
 
             console.log("sumA="+sumA+",sumB="+sumB+",sumC="+sumC+",sumD="+sumD);
 

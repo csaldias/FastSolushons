@@ -31,7 +31,7 @@ exports.add = function(req, res){
     {
         if (err)
             console.log("Error al insertar: %s ",err );
-        res.redirect('/cursos');
+        res.redirect('/');
     });
 };
 
@@ -54,6 +54,11 @@ exports.login = function(req, res){
             res.send('User o Password incorrectos.');
         }
     });
+};
+
+exports.logout = function(req, res) {
+    req.session.reset();
+    res.redirect('/');
 };
 
 exports.edit = function(req, res){

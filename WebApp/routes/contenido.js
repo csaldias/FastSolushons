@@ -9,7 +9,7 @@ exports.loadContenido = function(req, res){
             console.log(util.inspect(rows[0], false, null));
             if(err)
                 console.log("Error: %s ",err);
-            //La enuesta está resp1ondida?
+            //La enuesta está respondida?
             if (rows[0].ID_Categoria != null) {
                 console.log("Existe!");
                 res.render('cursos', { title: 'Plataforma de Aprendizaje' });
@@ -19,6 +19,7 @@ exports.loadContenido = function(req, res){
             }
         });
     } else {
+        //Como no estamos logeados, lo hacemos
         res.redirect('/login');
     }
 };

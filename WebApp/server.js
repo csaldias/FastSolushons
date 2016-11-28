@@ -44,6 +44,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', contenido.loadContenido);
 app.get('/login', users.renderLogin);
+app.get('/logout', users.logout);
 app.get('/register', users.register);
 app.post('/login/process', users.login);
 app.post('/register/process', users.add);
