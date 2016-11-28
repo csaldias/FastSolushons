@@ -42,8 +42,8 @@ if ('development' == app.get('env')) {
 
 //Rutas de las URL's de la Plataforma
 
-app.get('/', users.login);
-app.get('/cursos', contenido.index);
+app.get('/', contenido.loadContenido);
+app.get('/login', users.renderLogin);
 app.get('/register', users.register);
 app.post('/login/process', users.login);
 app.post('/register/process', users.add);

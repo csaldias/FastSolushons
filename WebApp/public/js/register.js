@@ -1,6 +1,6 @@
 angular
     .module('portalAprendizaje',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
-    .controller('registroController',  function($scope, $http) {
+    .controller('registroController',  function($scope, $http, $window) {
 
         $scope.user = {
             usuario: '',
@@ -20,6 +20,9 @@ angular
 
         $scope.registrarUsuario = function () {
             $http.post('/register/process', $scope.user)
+                .success(function (data) {
+                    $window.location.href = "/";
+                })
                 .error(function (data) {
                     console.log("Error: " + data);
                 });

@@ -1,6 +1,6 @@
 angular
     .module('portalAprendizaje',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
-    .controller('encuestaController',  function($scope, $http) {
+    .controller('encuestaController',  function($scope, $http, $window) {
         $scope.pregunta = {
         };
 
@@ -67,7 +67,7 @@ angular
                 "c":"2",
                 "d":"3"}};
 
-        $scope.categoria = "";
+        $scope.categoria = 0;
 
         $scope.obtenerCat = function () {
             //La forma mas obvia y menos elegante para calcular la categoria del usuario xd
@@ -84,17 +84,26 @@ angular
             console.log("R1="+R1+",R2="+R2);
 
             if(R1 <= 3 && R2 < 6){
-                $scope.categoria = "Divergente";
+                $scope.categoria = 1; //Divergente
             }
             else if(R1 > 3 && R2 < 6) {
-                $scope.categoria = "Asimilador";
+                $scope.categoria = 2; //Asimilador
             }
             else if(R1 > 3 && R2 >= 6) {
-                $scope.categoria = "Convergente";
+                $scope.categoria = 3; //Convergente
             }
             else {
-                $scope.categoria = "Adaptador";
+                $scope.categoria = 4; //Adaptador
             }
+            //Enviamos el resultado
+            $http.post('/encuesta/process', {categoria:$scope.categoria})
+                .success(function (data) {
+                    //console.log("Success: " + data);
+                    $window.location.href = "/";
+                })
+                .error(function (data) {
+                    console.log("Error: " + data);
+                });
         };
 
     });

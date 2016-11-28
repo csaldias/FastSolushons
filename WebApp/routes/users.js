@@ -31,7 +31,7 @@ exports.add = function(req, res){
     {
         if (err)
             console.log("Error al insertar: %s ",err );
-        //res.redirect('/usuarios');
+        res.redirect('/cursos');
     });
 };
 
@@ -48,7 +48,7 @@ exports.login = function(req, res){
             console.log("Error: %s ",err);
         if (rows[0].Contraseña == post.user.password) {
             req.session.user = post.user.name;
-            res.redirect('/cursos');
+            res.redirect('/');
         } else {
             res.set('Content-Type', 'text/plain');
             res.send('User o Password incorrectos.');
@@ -125,6 +125,6 @@ exports.register = function(req, res){
     res.render('register',{page_title:"Registrar - Plataforma de Aprendizaje"});
 };
 
-exports.login = function(req, res){
+exports.renderLogin = function(req, res){
     res.render('login',{page_title:"Ingresar - Plataforma de Aprendizaje"});
 };

@@ -9,6 +9,13 @@ exports.renderPaso2 = function(req, res){
 
 exports.processEncuesta = function(req, res){
     var util = require('util');
-    res.set('Content-Type', 'text/plain');
-    res.send(`Received: ${util.inspect(req.body, false, null)}`);
+    var db = require('./../db');
+    console.log(util.inspect(req.body, false, null));
+    console.log(util.inspect(req.session, false, null));
+    var query = db.query("UPDATE estudiante SET ID_Categoria = ? WHERE usuario = ? ",[req.body.categoria,req.session.user], function(err, rows)
+    {
+        if (err)
+            console.log("Error al actualizar: %s ",err );
+        res.redirect('/');
+    });
 };
