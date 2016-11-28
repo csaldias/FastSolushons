@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Editar Perfil - Portal de Aprendizaje</title>
+<style>
+
+body{
+	background-color: #DCDCDC
+}
+
+#principal{
+	width:800px;
+	/*background-color: #00F;*/
+	text-align:center;
+	margin:15px auto;
+	padding:15px;
+	border:3px solid #000;
+	border-radius: 2px;
+	background-color: #00008B;
+}
+
+#titulo{
+	font: bold 20px Verdana, Geneva, sans-serif;
+	text-shadow: #0F0;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css'>
+    <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.1/docs.css'>
+</head>
+
+<body>
+
+<header id="principal">
+<span id="titulo"> Administracion de cuentas </span>
+</header>
+
+<hgroup>
+    <h1>Perfil de Usuario</h1>
+    <h4>Realice las modificaciones que desee</h4>
+</hgroup>
+<div ng-controller="modPerfilController" ng-cloak="" ng-app="portalAprendizaje">
+<form>
+    <div class="group">
+    	<label>Nombre....................</label>
+        <input type="text"><span class="highlight"></span><span class="bar"></span>
+        
+    </div>
+    <div class="group">
+    	<label>Contraseña...............</label>
+        <input type="password"><span class="highlight"></span><span class="bar"></span>
+        
+    </div>
+    <div class="group">
+    	<label>Repetir contraseña...</label>
+        <input type="password"><span class="highlight"></span><span class="bar"></span>
+        
+    </div>
+    <div class="group">
+    	<label>Correo......................</label>
+        <input type="text"><span class="highlight"></span><span class="bar"></span>
+    </div>
+    <div class="group">
+    	<label>Carrera.....................</label>
+        <input type="text"><span class="highlight"></span><span class="bar"></span>
+    </div>
+    <a href="register">
+        <button type="button" class="button buttonGreen">Guardar Cambios
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
+    </a>
+</form>
+</div>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js'></script>
+<script src="js/mod_perfil.js"></script>
+</body>
+
+</html>
